@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "## 🔒 DevSecOps Scan Report" > summary.md
+echo "## 🔒 SecurePR Scan Report" > summary.md
 echo "" >> summary.md
 
 echo "### 🔍 Trivy Results" >> summary.md
@@ -11,4 +11,5 @@ echo "### ⚙️ Semgrep Results" >> summary.md
 head -n 50 semgrep-results.txt >> summary.md
 
 echo "" >> summary.md
-echo "_Powered by [DevSecOps-in-a-Box](https://github.com/saurabhxjha/devsecops-in-a-box) 🚀_" >> summary.md
+echo "_Powered by [SecurePR](https://github.com/saurabhxjha/securepr) 🚀_" >> summary.md
+echo "_© $(date +%Y) Starkseek. All rights reserved._" >> summary.md
