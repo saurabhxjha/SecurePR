@@ -11,4 +11,4 @@ echo "### ⚙️ Semgrep Results" >> summary.md
 head -n 50 semgrep-results.txt >> summary.md
 
 echo "" >> summary.md
-echo "_Powered by [DevSecOps-in-a-Box](https://github.com/yourusername/devsecops-in-a-box) 🚀_" >> summary.md
+echo "_Powered by [DevSecOps-in-a-Box](https://github.com/saurabhxjha/devsecops-in-a-box) 🚀_" >> summary.md
