@@ -1,4 +1,4 @@
-# 🚀 DevSecOps-in-a-Box
+# 🚀 SecurePR
 
 Automatically run **Trivy + Semgrep** on every Pull Request using GitHub Actions.
 
