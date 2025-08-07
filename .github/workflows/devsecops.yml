@@ -1,4 +1,4 @@
-name: DevSecOps Scan
+name: SecurePR Scan
 
 on:
   pull_request_target:
