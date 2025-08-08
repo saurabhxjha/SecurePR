@@ -11,5 +11,5 @@ echo "### ⚙️ Semgrep Results" >> summary.md
 head -n 50 semgrep-results.txt >> summary.md
 
 echo "" >> summary.md
-echo "_Powered by [SecurePR](https://github.com/saurabhxjha/securepr) 🚀_" >> summary.md
+echo "_Powered by [Starkseek](https://starkseek.com) 🚀_" >> summary.md
 echo "_© $(date +%Y) Starkseek. All rights reserved._" >> summary.md
