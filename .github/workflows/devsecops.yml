@@ -14,6 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Check scan limit
+        run: |
+          curl -X POST "https://olmznclvpoxbavihmyqi.supabase.co/functions/v1/check-scan-limit" \
+          -H "Authorization: Bearer ${{ secrets.SERVICE_ROLE_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d '{"user_id": "${{ github.actor }}"}'
+      
       - name: Run Trivy scan
         uses: aquasecurity/trivy-action@master
         with:
