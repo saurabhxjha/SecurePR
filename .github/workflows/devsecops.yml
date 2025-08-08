@@ -14,16 +14,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Debug user_id
-        run: echo "user_id is: ${{ github.actor }}"
-
       - name: Check scan limit
+        env:
+          USER_ID: ${{ github.actor }}
+          SERVICE_ROLE_KEY: ${{ secrets.SERVICE_ROLE_KEY }}
         run: |
-          curl -X POST "https://olmznclvpoxbavihmyqi.supabase.co/functions/v1/check-scan-limit" \
-          -H "Authorization: Bearer ${{ secrets.SERVICE_ROLE_KEY }}" \
-          -H "Content-Type: application/json" \
-          -d "{\"user_id\": \"${{ github.actor }}\"}"
-      
+          echo "Checking scan limit for user: $USER_ID"
+          response=$(curl -s -X POST "https://olmznclvpoxbavihmyqi.supabase.co/functions/v1/check-scan-limit" \
+            -H "Authorization: Bearer $SERVICE_ROLE_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"user_id\": \"$USER_ID\"}")
+          echo "Response from check-scan-limit function: $response"
+
+          # Exit with error if scan limit reached
+          if echo "$response" | grep -q "Scan limit reached"; then
+            echo "Scan limit reached for user $USER_ID. Failing workflow."
+            exit 1
+          fi
+
       - name: Run Trivy scan
         uses: aquasecurity/trivy-action@master
         with:
