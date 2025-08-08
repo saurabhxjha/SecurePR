@@ -3,8 +3,10 @@
 **SecurePR** is an open-source GitHub Action that automatically scans your code for **security vulnerabilities** and **code quality issues** on every Pull Request.  
 It uses **Trivy** and **Semgrep** to analyze your codebase and posts the results directly as a comment on the PR.  
 
+![GitHub stars](https://img.shields.io/github/stars/saurabhxjha/SecurePR?style=social)
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/saurabhxjha)
+
 📌 **Product Page:** [starkseek.com/products/securepr](https://starkseek.com/products/securepr)  
-💖 **Support:** [github.com/sponsors/saurabhxjha](https://github.com/sponsors/saurabhxjha)
 
 ---
 
